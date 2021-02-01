@@ -14,5 +14,5 @@ class UserViewSet(viewsets.ModelViewSet):
 
 class HomeView(ListView):
     model = User
-    template_name = "home.html"
+    template_name = "index.html"
     context_object_name = "USER"
