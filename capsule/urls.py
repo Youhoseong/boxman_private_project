@@ -18,12 +18,15 @@ from django.urls import path
 from django.conf.urls import url, include
 
 from rest_framework import routers
-from users.views import UserViewSet
+from users import views as user_views
+
 
 router = routers.DefaultRouter()
-router.register('users', UserViewSet)
+router.register('users', user_views.UserViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api', include(router.urls)),
+    path("", include("users.urls", namespace="users")),
 ]

@@ -7,4 +7,4 @@ from . import models
 @admin.register(models.User)
 class CustomUserAdmin(UserAdmin):
     fieldsets = UserAdmin.fieldsets + \
-        (("Custom Profile", {"fields": ("avatar",)}),)
+        (("Custom Profile", {"fields": ("avatar","bio", "login_method", "email_verified")}),)

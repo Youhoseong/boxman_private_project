@@ -1,0 +1,29 @@
+{% load static i18n %}
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+    <title>{% block page_title %}Home {% endblock page_title %}| YHS </title>
+</head>
+
+
+<body>
+    <header>
+        <a href="{% url "users:home" %}">
+            <img src="{% static 'logo/logo2.gif' %}" />
+        </a>
+
+    </header>
+
+</body>
+    {% for user in USER %}
+        {{user.username}}
+        {{user.avatar.file.url}}
+    {% endfor %}
+
+</html>
