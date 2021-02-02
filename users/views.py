@@ -11,8 +11,3 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-
-class HomeView(ListView):
-    model = User
-    template_name = "index.html"
-    context_object_name = "USER"

@@ -28,5 +28,5 @@ router.register('users', user_views.UserViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api', include(router.urls)),
-    path("", include("users.urls", namespace="users")),
+    path("", include("boards.urls", namespace="boards")),
 ]
